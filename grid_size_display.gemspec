@@ -5,7 +5,7 @@ require "grid_size_display/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
-  spec.name        = "grid_size_display"
+  spec.name        = "rails-bootstrap-sass-grid_size_display"
   spec.version     = GridSizeDisplay::VERSION
 
   spec.authors       = ["Jennifer Reyes"]

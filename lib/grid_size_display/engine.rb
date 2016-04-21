@@ -3,7 +3,7 @@ module GridSizeDisplay
 
     isolate_namespace GridSizeDisplay
 
-    initializer "grid_size_display.add_middleware" do |app|
+    initializer "rails-bootstrap-sass_grid_size_display.add_middleware" do |app|
       app.middleware.use GridSizeDisplay::Rack
     end
   end

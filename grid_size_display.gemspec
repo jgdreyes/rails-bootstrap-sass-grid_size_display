@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.name        = "grid_size_display"
   spec.version     = GridSizeDisplay::VERSION
 
-  spec.authors       = ["jgdreyes"]
+  spec.authors       = ["Jennifer Reyes"]
   spec.email         = ["jgdreyes@gmail.com"]
 
   spec.summary       = %q{Display a colored grid size indicator when using bootstrap-sass with Rails.}

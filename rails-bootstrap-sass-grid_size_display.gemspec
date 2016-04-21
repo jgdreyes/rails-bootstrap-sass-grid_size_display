@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Display a colored grid size indicator when using bootstrap-sass with Rails.}
   spec.description   = %q{Display a colored grid size indicator when using bootstrap-sass with Rails. Display a colored grid size indicator at the top of the page.  The colors correspond to the bootstrap breakpoints.}
-  spec.homepage      = "https://github.com/jgdreyes/grid_size_display"
+  spec.homepage      = "https://github.com/jgdreyes/rails-bootstrap-sass-grid_size_display"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

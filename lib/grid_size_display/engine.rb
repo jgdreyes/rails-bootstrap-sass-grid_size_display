@@ -20,15 +20,9 @@ module GridSizeDisplay
     def call(env)
       status, headers, response = @app.call(env)
 
-      req = ::Rack::Request.new(env)
-      case req.params["grid_size_display"]
-      when 'enable' then req.session['grid_size_display'] = true
-      when 'disable' then req.session['grid_size_display'] = false
-      end
+      process_display_param(env)
 
-      req.session["grid_size_display"] = true if req.session["grid_size_display"].nil?
-
-      if headers['Content-Type'].to_s.include?(HTML_CONTENT_TYPE) && req.session["grid_size_display"]
+      if headers['Content-Type'].to_s.include?(HTML_CONTENT_TYPE) && display_grid?
         new_response = []
         response.each do |body|
           # find the last matching insertion point in the body and insert the content
@@ -48,8 +42,20 @@ module GridSizeDisplay
       end
     end
 
+    def display_grid?
+      req.session['grid_size_display']
+    end
 
-    def process_params(env)
+
+    def process_display_param(env)
+      req = ::Rack::Request.new(env)
+
+      case req.params['grid_size_display']
+      when 'enable' then req.session['grid_size_display'] = true
+      when 'disable' then req.session['grid_size_display'] = false
+      end
+
+      req.session['grid_size_display'] = true if req.session['grid_size_display'].nil?
     end
 
   end

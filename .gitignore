@@ -19,3 +19,5 @@ test/dummy/.sass-cache
 /.DS_Store
 
 /.gems
+/.byebug_history
+/.rspec

@@ -20,9 +20,9 @@ module GridSizeDisplay
     def call(env)
       status, headers, response = @app.call(env)
 
-      process_display_param(env)
+      req = process_display_param(env)
 
-      if headers['Content-Type'].to_s.include?(HTML_CONTENT_TYPE) && display_grid?
+      if headers['Content-Type'].to_s.include?(HTML_CONTENT_TYPE) && display_grid?(req)
         new_response = []
         response.each do |body|
           # find the last matching insertion point in the body and insert the content
@@ -42,7 +42,7 @@ module GridSizeDisplay
       end
     end
 
-    def display_grid?
+    def display_grid?(req)
       req.session['grid_size_display']
     end
 
@@ -56,6 +56,7 @@ module GridSizeDisplay
       end
 
       req.session['grid_size_display'] = true if req.session['grid_size_display'].nil?
+      req
     end
 
   end

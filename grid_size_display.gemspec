@@ -27,4 +27,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", "~> 4.2"
   spec.add_dependency "bootstrap-sass", "~> 3.3"
+  spec.add_dependency "byebug", "~> 8.2"
 end

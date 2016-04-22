@@ -1,4 +1,4 @@
-= GridSizeDisplay
+# GridSizeDisplay
 
 If you are using Rails and the bootstrap-sass gem, display a visual indicator to let
 you know what bootstrap grid size you are using.  This gem uses the default

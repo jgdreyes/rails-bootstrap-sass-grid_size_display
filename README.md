@@ -20,6 +20,8 @@ From the Bootstrap3 documentation:
 - `col-lg-*` = Green
 
 
+## Current Version
+- v1.0.0
 
 
 

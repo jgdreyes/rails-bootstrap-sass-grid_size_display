@@ -43,7 +43,7 @@ module GridSizeDisplay
     end
 
     def display_grid?(req)
-      req.session['grid_size_display']
+      ::GridSizeDisplay.config.enabled? && req.session['grid_size_display']
     end
 
 

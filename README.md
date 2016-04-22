@@ -28,9 +28,7 @@ From the Bootstrap3 documentation:
 Add this line to your applications Rails + bootstrap-sass enabled application Gemfile:
 
 ```ruby
-group :development do
-  gem 'gem_size_display'
-end
+gem 'gem_size_display'
 ```
 
 And then execute:
@@ -40,7 +38,6 @@ $ bundle
 ```
 
 Include the Sass partial to your application.scss file. Be sure to include it after bootstrap.
-
 ```sass
 // app/assets/stylesheets/application.scss
 ...
@@ -48,6 +45,20 @@ Include the Sass partial to your application.scss file. Be sure to include it af
 @import "bootstrap";
 @import "grid_size_display/media_sizes";
 ```
+
+## Configuration
+
+The gem is enabled by default if you are in development environment.
+You can add an initializer to control when to enable the gem:
+```ruby
+# config/initializers/grid_size_display.rb
+
+GridSizeDisplay.configure do |config|
+  # config.enabled = false
+  # config.enabled = Rails.env.development?
+end
+```
+
 
 ## Special query strings
 
